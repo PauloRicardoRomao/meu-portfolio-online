@@ -21,17 +21,14 @@
  body{
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
+    /*width: 100vw;*/
+    min-height: 100vh;
 } 
 
 .container-topo{
     display: flex;
     flex-direction: column;
     height: 20vh;
-    width: 100%;
     align-items: center;
     justify-content: space-around;
     box-shadow: 0px 0px 20px 4px rgb(0, 0, 0);
@@ -41,7 +38,7 @@
 .container-topo .barra-superior{
     display: flex;
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
     height: 7vh;
     gap: 2%;
     padding: 5px 30px;
@@ -133,6 +130,7 @@
 }
 
 .container-navegacao ul li a:hover{
+    background-color: #850808;
     color: #fff;
     text-shadow: /*2px 1px 0px var(--cor-fonte-menu-hover)*/
                 1px 1px 10px #ddd, 
@@ -140,13 +138,13 @@
                 1px -1px 10px #ddd,
                 -1px 1px 10px #ddd;
     text-decoration: none;
-    box-shadow: 0px 0px 10px 5px #8d8d8d;
+    box-shadow: inset 0px 0px 5px 1px #a71313;
 }
 
 .container-principal{
     display: flex;
-    flex-direction: column;
     flex: 1;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
 }
@@ -155,8 +153,10 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 1024px;
+    max-width: 1400px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -213,8 +213,10 @@
 .container-principal .conteudo-principal-sobre{
     display: flex;
     flex-direction: column;
-    width: 100vw;
-    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 1024px;
+    max-width: 1400px;
     align-items: center;
     justify-content: center;
     background-image: url('../assets/imagens/computer-767776_1920.jpg');
@@ -228,7 +230,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     width: 70%;
-    height: 80%;
+    min-height: 80vh;
     align-items: center;
     justify-content: center;
     text-align: justify;
@@ -273,9 +275,11 @@
 
 .container-principal-contato{
     display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100%;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 1024px;
+    max-width: 1400px;
     align-items: center;
     justify-content: center;
     background-image: url('../assets/imagens/computer-1185626_1920.jpg');
@@ -288,8 +292,9 @@
 .container-principal-contato .conteudo-principal-contato{
     display: flex;
     flex-direction: column;
-    width: 60%;
-    height: 90%;
+    flex-wrap: wrap;
+    width: 70%;
+    min-height: 80vh;
     align-items: center;
     justify-content: space-around;
     background-color: var(--cor-blocos);  
@@ -392,11 +397,13 @@
 .container-principal .conteudo-principal-projetos{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-    width: 100vw;
-    height: 100%;
-    padding: 20px 0;
-    gap: 10px;
+    width: 100%;
+    min-height: 100vh;
+    min-width: 1024px;
+    max-width: 1400px;
+    
+    /*padding: 20px 0;*/
+    /*gap: 10px;*/
     align-items: center;
     justify-content: space-around;
     background-image: url('../assets/imagens/computer-767776_1920.jpg');
@@ -409,7 +416,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: auto;
+    width: 100%;
+    height: 15%;
     align-items: center;
     justify-content: center;
     font-size: 2.0em;
@@ -422,75 +430,129 @@
 .conteudo-principal-projetos section{
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 35px;
-    width: 90%;
-    height: 90%;
+    flex-wrap: wrap;
+    /*gap: 35px;*/
+    width: 100%;
+    min-height: 100vh;
     align-items: center;
     justify-content: space-around;
 }
 
-.conteudo-principal-projetos .conteudo-principal-projetos-projeto{
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto{
     display: flex;
     flex-direction: column;
+    position: relative;
     flex-wrap: wrap;
-    gap: 15px;
-    width: 30%;
-    height: 90%;
-    align-items: center;
-    justify-content: space-between;
-    text-align: justify;
-    background-color: var(--cor-blocos); ; 
-    border-radius: 30px;
-    box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.25);
-}
-
-.conteudo-principal-projetos .conteudo-principal-projetos-projeto figure{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 50%;
+    /*gap: 15px;*/
+    width: 33.3%;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
+    background-color: var(--cor-blocos); ; 
+    /*border-radius: 30px;*/
+    box-shadow: 0px 0px 4px 4px rgba(255, 255, 255, 0.25);
+    overflow: hidden;
     background-color: #fff;
 }
 
-.conteudo-principal-projetos .conteudo-principal-projetos-projeto a,
-.conteudo-principal-projetos .conteudo-principal-projetos-projeto figure a{
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto img{
     display: flex;
-    flex-direction: row;
-    width: auto;
-    text-decoration: none;
-    align-items: center;
-    justify-content: center;
-    text-align: justify;
-}
-
-
-.conteudo-principal-projetos .conteudo-principal-projetos-projeto .conteudo-principal-projetos-projeto-imagem{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 85%;
-    align-items: center;
-    justify-content: center;
-}
-
-.conteudo-principal-projetos .conteudo-principal-projetos-projeto .conteudo-principal-projetos-projeto-texto{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+    position: absolute;
     height: 100%;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    object-position: center;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-antunes{
+    display: flex;
+    position: absolute;
+    height: 100%; /* Ajuste a altura para 100% do contêiner pai */
+    width: 100%; /* A largura será ajustada automaticamente */
+    object-fit: none; /* A imagem não será redimensionada */
+    object-position: left center; /* Alinha a imagem à esquerda e centraliza verticalmente */
+    background-color: #ffffff;
+    z-index: 1;
+    overflow: hidden; /* Garante que a parte direita da imagem seja ocultada */
+    max-width: 100%; /* Limita a largura da imagem à metade do contêiner pai */
+    clip-path: inset(0 0 0 0);
+}
+
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-br{
+    display: flex;
+    position: absolute;
+    height: auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    object-fit: contain;
+    object-position: center;
+    background-color: #ffffff;
+    z-index: 1;
+}
+
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto iframe{
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+    background-color: #000;
+}
+
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto h1{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    height: auto;
+    width: 100%;
+    top: 65%;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--cor-fonte-principal);
+    z-index: 10;
+}
+
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto div{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    bottom: 5%;
+    flex-wrap: wrap;
+    padding: 0 20px;
+    min-height: 10%;
+    width: 100%;
     align-items: center;
     justify-content: center;
     text-align: justify;
-    font-size: 1.2em;
-    font-family: var(--fonte-principal);
-    color: var(--cor-fonte-menu);
-    font-weight: 400;
-    text-shadow: 0px 0px 10px var(--cor-fonte-principal);
+    z-index: 10;
 }
+
+.conteudo-principal-projetos section .conteudo-principal-projetos-projeto div p{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3em;
+    color: #575757;
+
+}
+
 
 
 @keyframes pulso-botao {
