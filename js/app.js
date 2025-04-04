@@ -41,3 +41,26 @@ function botaoMenu() {
   }
 }
 
+function abreGranja(){
+    window.open('https://pauloricardoromao.github.io/landing-page-granja/');
+}
+
+function abreModelaMi(){
+    window.open('https://pauloricardoromao.github.io/Projeto-ModelaMi/');
+}
+
+function abreFundBra(){
+    window.open('https://pauloricardoromao.github.io/Site-Curso-Fundacao-Bradesco/');
+}
+
+function abreLinkedin(){
+    window.open('https://www.linkedin.com/in/paulo-ricardo-rom%C3%A3o-29535316b/');
+}
+
+function abreGitHub(){
+    window.open('https://github.com/PauloRicardoRomao');
+}
+
+function abreEmail(){
+    window.open('mailto:pauloromao.dev2020@gmail.com');
+}
