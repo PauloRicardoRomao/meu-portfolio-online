@@ -64,3 +64,61 @@ function abreGitHub(){
 function abreEmail(){
     window.open('mailto:pauloromao.dev2020@gmail.com');
 }
+
+
+
+const carrossel = document.querySelector('#carrossel-projetos');
+const projeto = document.querySelectorAll('#projeto');
+const paginacao = document.querySelectorAll('#paginacao');
+
+carrossel.forEach((_, index) => {
+    const span = document.createElement('span');
+    span.addEventListener('click', () => {
+        counter = index;
+        updateCarousel();
+    });
+    paginacao.appendChild(span);
+});
+
+const paginacaoSpans = document.querySelectorAll('#carrossel-projetos .paginacao span');
+paginacaoSpans[0].classList.add('active');
+
+function updateCarousel() {
+    carrossel.style.transform = `translateX(-${counter * 100}%)`;
+    paginacaoSpans.forEach(span => span.classList.remove('active'));
+    paginacaoSpans[counter].classList.add('active');
+}
+
+// Navegação por toque
+let touchStartX = 0;
+let touchEndX = 0;
+
+carrossel.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+carrossel.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeDistance = touchStartX - touchEndX;
+
+    if (swipeDistance > 50) { // Deslize para a esquerda
+        if (counter < projeto.length - 1) {
+            counter++;
+        }
+    } else if (swipeDistance < -50) { // Deslize para a direita
+        if (counter > 0) {
+            counter--;
+        }
+    }
+
+    updateCarousel();
+}
+
+// Impede o comportamento padrão de arrastar
+carrossel.addEventListener('touchmove', (e) => {
+    e.preventDefault();
+});
