@@ -11,14 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Sarala&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body onresize="verificaLargura()">
     <header class="container-topo" id="topo1">
         <div class="barra-superior">
             <img src="assets/imagens/icoLinkedin.png" alt="LinkedIn" onclick="abreLinkedin()">
             <img src="assets/imagens/icoGithub.png" alt="GitHub" onclick="abreGitHub()">
             <img src="assets/imagens/icoemail.png" alt="Email" onclick="abreEmail()">
         </div>
-        <button type="button" id="button-menu" class="menu-icone" onclick="botaoMenu()">&#9776;</button>
+        <button type="button" id="button-menu" class="menu-icone" onclick="abreMenuMobile()">&#9776;</button>
         <nav class="container-navegacao" id="navegacao">
             <ul>
                 <li id="menu-home"><a href="index.html">HOME</a></li>
@@ -33,7 +33,11 @@
             <h1 class="conteudo-principal-projetos-titulo">Projetos</h1>
             <section id="carrossel-projetos">
                 <content class="conteudo-principal-projetos-projeto" id="projeto" onclick="abreGranja()">
-                    <img src="./assets/imagens/capa1image.jpg" alt="Logo Antunes Avaré" id="img-fund-antunes">
+                    <!--src="./assets/imagens/capa1image.jpg"-->
+                    <img src="assets/imagens/mobile/logo-granja-mob.jpeg"
+                        srcset="assets/imagens/mobile/logo-granja-mob.jpeg 480w"
+                        sizes="(max-width: 1024px) 480px"
+                        alt="Logo Antunes Avaré" id="img-fund-antunes">  
                     <iframe src="https://pauloricardoromao.github.io/landing-page-granja/"></iframe>
                     <div class="texto-card">
                         <p>
@@ -43,7 +47,10 @@
                     </div>
                 </content>
                 <content class="conteudo-principal-projetos-projeto" id="projeto" onclick="abreModelaMi()">
-                    <img src="./assets/imagens/Modela Mi logo.png" alt="Logo ModelaMi">
+                    <img src="./assets/imagens/Modela Mi logo.png" 
+                        srcset="./assets/imagens/mobile/logo-modelami-mob.png 480w"
+                        sizes="(max-width: 600px) 480px" 
+                        alt="Logo ModelaMi" id="img-modelami">
                     <iframe src="https://pauloricardoromao.github.io/Projeto-ModelaMi/"></iframe>
                     <div class="texto-card">
                         <p>
@@ -53,7 +60,10 @@
                     </div>
                 </content>
                 <content class="conteudo-principal-projetos-projeto" id="projeto" onclick="abreFundBra()">
-                    <img src="./assets/imagens/logo.png" alt="Logo FundBR" id="img-fund-br">
+                    <img src="./assets/imagens/logo.png" 
+                        srcset="./assets/imagens/mobile/logo-fund-bra-mob.png 480w"
+                        sizes="(max-width: 1024px) 480px" 
+                        alt="Logo FundBR" id="img-fund-br">
                     <iframe src="https://pauloricardoromao.github.io/Site-Curso-Fundacao-Bradesco/"></iframe>
                     <div class="texto-card">
                         <p>
@@ -62,10 +72,11 @@
                         </p>
                     </div>
                 </content>
+                <button class="slide-prev">&#9664;</button>
+                <button class="slide-next">&#9654;</button>
             </section>
-            <div class="paginacao"></div>
         </content>
     </main>
-    <script src="js/app.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 </html>
