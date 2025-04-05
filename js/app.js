@@ -1,44 +1,39 @@
-function botaoMenu() {
-    const topo = document.getElementById('topo1');
-    const naveg = document.getElementById('navegacao');
-    const botao = document.getElementById('button-menu');
+function verificaLargura(){
+    const menuMobile = document.getElementById('navegacao');
+    const textMenuMobile = menuMobile.querySelectorAll('ul li a');
 
-    const displayTopo = getComputedStyle(topo).display; // Correção crucial
-    const displayTamanho = window.visualViewport.width;
+    if (window.innerWidth <= 1024){
+        menuMobile.style.display = 'none';
+        textMenuMobile.forEach(textMenuMobile => {
+            if (window.innerWidth <= 389) {
+                textMenuMobile.style.fontSize = '2.0em';
+            }
+        });
+    } else if(window.innerWidth > 1024){
+        menuMobile.style.display = 'flex';
+    } 
+}
 
-  if (displayTopo === 'block' && displayTamanho <= "576"){
-      // Abre o menu
-      topo.style.width = '80%';
-      topo.style.height = '100%';
-      naveg.style.display = 'block';
-      topo.style.position = 'absolute';
-      topo.style.left = "0";
-      topo.style.top = "0";
-      topo.style.display = "flex";
-      botao.style.width = "100%";
-      botao.style.height = "15%";
-      topo.style.alignitems = "flex-start";
-      topo.style.justifycontent = "space-around";
-      console.log("Valor de displayTopo:", displayTamanho); // Para depuração
-      console.warn("Valor de displayTopo inesperado:", displayTamanho);
-  } else if (displayTopo === 'flex' && displayTamanho <= "576") {
-      // Fecha o menu
-      topo.style.width = '100%';
-      topo.style.height = '25%';
-      naveg.style.display = 'none';
-      topo.style.removeProperty('position');
-      topo.style.width = "100%";
-      topo.style.height = "15%";
-      topo.style.display = "block";
-      botao.style.display = "block";
-      botao.style.width = "30%";
-      botao.style.height = "auto";
-      topo.style.alignitems = "center";
-      topo.style.justifycontent = "center";
-  } else {
-      console.log("Valor de displayTopo:", displayTopo); // Para depuração
-      console.warn("Valor de displayTopo inesperado:", displayTopo);
-  }
+function abreMenuMobile(){
+    const menu = document.getElementById('navegacao');
+
+    const menuProp = getComputedStyle(menu).display;
+    if(menuProp === 'none'){
+        menu.style.display = 'flex';
+        menu.style.zIndex = '30';
+    }else if(menuProp === 'flex'){
+        menu.style.display = 'none';
+    }
+
+}
+
+function escondeMenuMobile(){
+    const menuMobile = document.getElementById('container-navegacao');
+    const tela = document.querySelectorAll('body');
+    if (window.innerWidth <= 1024) {
+        tela.style.overflow = 'auto';
+        menuMobile.style.display = 'none';
+    }
 }
 
 function abreGranja(){
@@ -66,59 +61,31 @@ function abreEmail(){
 }
 
 
+const slides = document.querySelectorAll('#projeto');
+const prevButton = document.querySelector('.slide-prev');
+const nextButton = document.querySelector('.slide-next');
+let currentSlide = 0;
 
-const carrossel = document.querySelector('#carrossel-projetos');
-const projeto = document.querySelectorAll('#projeto');
-const paginacao = document.querySelectorAll('#paginacao');
-
-carrossel.forEach((_, index) => {
-    const span = document.createElement('span');
-    span.addEventListener('click', () => {
-        counter = index;
-        updateCarousel();
-    });
-    paginacao.appendChild(span);
-});
-
-const paginacaoSpans = document.querySelectorAll('#carrossel-projetos .paginacao span');
-paginacaoSpans[0].classList.add('active');
-
-function updateCarousel() {
-    carrossel.style.transform = `translateX(-${counter * 100}%)`;
-    paginacaoSpans.forEach(span => span.classList.remove('active'));
-    paginacaoSpans[counter].classList.add('active');
-}
-
-// Navegação por toque
-let touchStartX = 0;
-let touchEndX = 0;
-
-carrossel.addEventListener('touchstart', (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-});
-
-carrossel.addEventListener('touchend', (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-});
-
-function handleSwipe() {
-    const swipeDistance = touchStartX - touchEndX;
-
-    if (swipeDistance > 50) { // Deslize para a esquerda
-        if (counter < projeto.length - 1) {
-            counter++;
-        }
-    } else if (swipeDistance < -50) { // Deslize para a direita
-        if (counter > 0) {
-            counter--;
-        }
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('slide-active');
+    if (i === index) {
+      slide.classList.add('slide-active');
     }
-
-    updateCarousel();
+  });
 }
 
-// Impede o comportamento padrão de arrastar
-carrossel.addEventListener('touchmove', (e) => {
-    e.preventDefault();
-});
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+nextButton.addEventListener('click', nextSlide);
+prevButton.addEventListener('click', prevSlide);
+
+showSlide(currentSlide);
