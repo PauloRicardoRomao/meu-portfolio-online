@@ -893,8 +893,7 @@ body{
     }
     
     .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-antunes{
-        display: none;
-        position: absolute;
+        display: flex;
         height: 100%;
         width: 100%;
         align-items: center;
@@ -905,8 +904,7 @@ body{
     }
     
     .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-modelami{
-        display: none;
-        position: absolute;
+        display: flex;
         height: 100%;
         width: 100%;
         align-items: center;
@@ -918,7 +916,6 @@ body{
     
     .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-br{
         display: none;
-        position: absolute;
         height: 100%;
         width: 100%;
         align-items: center;
