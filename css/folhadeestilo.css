@@ -475,7 +475,19 @@ body{
     );
 }
 
-.conteudo-principal-projetos section{
+.conteudo-principal-projetos .container-carrossel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*gap: 35px;*/
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.conteudo-principal-projetos .container-carrossel section{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -530,7 +542,7 @@ body{
 
 
 
-.conteudo-principal-projetos section .conteudo-principal-projetos-projeto{
+.conteudo-principal-projetos .container-carrossel section .conteudo-principal-projetos-projeto{
     display: flex;
     flex-direction: column;
     position: relative;
@@ -565,7 +577,6 @@ body{
     object-fit: contain;
     object-position: center;
     background-color: #ffffff;
-    z-index: 1;
 }
 
 .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-antunes{
@@ -576,8 +587,6 @@ body{
     object-fit: contain; /* A imagem não será redimensionada */
     object-position: left center; /* Alinha a imagem à esquerda e centraliza verticalmente */
     background-color: #ffffff;
-    z-index: 1;
-    overflow: hidden; /* Garante que a parte direita da imagem seja ocultada */
     max-width: 100%; /* Limita a largura da imagem à metade do contêiner pai */
     clip-path: inset(0 0 0 0);
 }
@@ -592,7 +601,6 @@ body{
     object-fit: contain;
     object-position: center;
     background-color: #ffffff;
-    z-index: 1;
 }
 
 .conteudo-principal-projetos section .conteudo-principal-projetos-projeto iframe{
@@ -777,7 +785,7 @@ body{
     
     .container-principal .conteudo-principal-sobre-titulo{
         padding-right: 15%;
-        padding-top: 10%;
+        padding-top: 5%;
         font-size: 2.0em;
         clip-path: polygon(
             50% 0%,
@@ -809,7 +817,7 @@ body{
     
     .container-principal-contato .conteudo-principal-contato-titulo{
         padding-right: 5%;
-        padding-top: 10%;
+        padding-top: 5%;
         font-size: 1.3em;
         clip-path: polygon(
             35% 0%,
@@ -861,7 +869,7 @@ body{
     .conteudo-principal-projetos .conteudo-principal-projetos-titulo{
         height: 20vh;
         padding-right: 15%;
-        padding-top: 10%;
+        padding-top: 5%;
         font-size: 2.0em;
         clip-path: polygon(
             40% 0%,
@@ -870,29 +878,54 @@ body{
             35% 100%
         );
     }
+
+    .conteudo-principal-projetos .container-carrossel{
+        flex-wrap: nowrap;
+        width: 100%;
+        min-height: 100vh;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
     
-    .conteudo-principal-projetos section{
+    .conteudo-principal-projetos .container-carrossel section{
         display: flex;
         position: relative;
         flex-direction: row;
         flex-wrap: nowrap;
-        min-width: 100vw;
+        width: 100%;
         min-height: 100vh;
         align-items: flex-start;
+        justify-content: flex-start;
+        animation: slide 15s linear infinite;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
     }
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto{
+    .container-carrossel section .conteudo-principal-projetos-projeto{
         min-width: 100%;
         min-height: 100vh;
         position: absolute;
         justify-content: center;
+        flex-shrink: 0;
     }
 
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto:hover{
+    .container-carrossel section .conteudo-principal-projetos-projeto:hover{
         animation: none;
     }
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-antunes{
+    .container-carrossel section .conteudo-principal-projetos-projeto #img-fund-antunes{
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        object-fit: contain;
+        object-position: center;
+        background-color: #fff;
+    }
+    
+    .container-carrossel section .conteudo-principal-projetos-projeto #img-modelami{
         display: flex;
         height: 100%;
         width: 100%;
@@ -903,7 +936,7 @@ body{
         background-color: #000;
     }
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-modelami{
+    .conteudo-principal-projetos .container-carrossel section .conteudo-principal-projetos-projeto #img-fund-br{
         display: flex;
         height: 100%;
         width: 100%;
@@ -911,22 +944,11 @@ body{
         justify-content: center;
         object-fit: contain;
         object-position: center;
-        background-color: #000;
-    }
-    
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-br{
-        display: none;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-        object-fit: contain;
-        object-position: center;
-        background-color: #000;
+        background-color: #fff;
     }    
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto div p{
-        display: none;
+    .conteudo-principal-projetos .container-carrossel section .conteudo-principal-projetos-projeto div p{
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         height: 100%;
@@ -938,7 +960,6 @@ body{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1.3em;
         color: #949494;
-        background-color: #fff;
         text-shadow: 0px 0px 1px #000000;
     }
         
@@ -1130,16 +1151,36 @@ body{
             35% 100%
         );
     }
+
+    .conteudo-principal-projetos .container-carrossel{
+        flex-wrap: nowrap;
+        width: 100%;
+        min-height: 100vh;
+        align-items: flex-start;
+        justify-content: flex-start;
+        overflow: hidden;
+    }
     
-    .conteudo-principal-projetos section{
+    .conteudo-principal-projetos .container-carrossel section{
         display: flex;
         position: relative;
         flex-direction: row;
         flex-wrap: nowrap;
-        min-width: 100vw;
+        width: 100%;
         min-height: 100vh;
         align-items: flex-start;
         justify-content: flex-start;
+        animation: slide 15s linear infinite;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+    }
+    
+    .container-carrossel section .conteudo-principal-projetos-projeto{
+        min-width: 100%;
+        min-height: 100vh;
+        position: absolute;
+        justify-content: center;
+        flex-shrink: 0;
     }
 
     .slide-prev,
@@ -1148,24 +1189,27 @@ body{
         top: 50%;
         width: 10%;
     }
-
-    .slide-active {
-        display: block;
-      }
-
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto{
-        min-width: 100%;
+    .container-carrossel section .conteudo-principal-projetos-projeto{
+        width: 100%;
         min-height: 100vh;
         position: absolute;
         justify-content: center;
+        flex-shrink: 0;
     }
 
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto:hover{
+    @keyframes carrossel-projetos-projeto{
+        0% { transform: translateX(0); }
+        33.33% { transform: translateX(0); }
+        66.66% { transform: translateX(-500px); } /* Desloca um slide */
+        100% { transform: translateX(-1000px); } /* Desloca dois slides */
+    }
+
+    .container-carrossel section .conteudo-principal-projetos-projeto:hover{
         animation: none;
     }
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-antunes{
+    .container-carrossel section .conteudo-principal-projetos-projeto #img-fund-antunes{
         display: flex;
         position: absolute;
         height: 100%;
@@ -1177,7 +1221,7 @@ body{
         background-color: #fff;
     }
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-modelami{
+    .container-carrossel section .conteudo-principal-projetos-projeto #img-modelami{
         display: flex;
         position: absolute;
         height: 100%;
@@ -1189,7 +1233,7 @@ body{
         background-color: #000;
     }
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto #img-fund-br{
+    .container-carrossel section .conteudo-principal-projetos-projeto #img-fund-br{
         display: flex;
         position: absolute;
         height: 100%;
@@ -1201,8 +1245,8 @@ body{
         background-color: #fff;
     }    
     
-    .conteudo-principal-projetos section .conteudo-principal-projetos-projeto div p{
-        display: none;
+    .container-carrossel section .conteudo-principal-projetos-projeto div p{
+        display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         height: 100%;
@@ -1214,7 +1258,6 @@ body{
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-size: 1.3em;
         color: #949494;
-        background-color: #fff;
         text-shadow: 0px 0px 1px #000000;
     }
         
