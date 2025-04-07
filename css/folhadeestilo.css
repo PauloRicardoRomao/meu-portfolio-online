@@ -743,7 +743,8 @@ body{
         background-color: #4c0000;
         align-items: center;
         justify-content: flex-start;
-        font-size: 1.5em;
+        font-size: 1.3em;
+        font-weight: normal;
     }
 
     .container-topo .container-navegacao ul li a{
@@ -1198,13 +1199,6 @@ body{
         position: absolute;
         justify-content: center;
         flex-shrink: 0;
-    }
-
-    @keyframes carrossel-projetos-projeto{
-        0% { transform: translateX(0); }
-        33.33% { transform: translateX(0); }
-        66.66% { transform: translateX(-500px); } /* Desloca um slide */
-        100% { transform: translateX(-1000px); } /* Desloca dois slides */
     }
 
     .container-carrossel section .conteudo-principal-projetos-projeto:hover{
