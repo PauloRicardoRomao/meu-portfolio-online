@@ -743,8 +743,6 @@ body{
         background-color: #4c0000;
         align-items: center;
         justify-content: flex-start;
-        font-size: 1.3em;
-        font-weight: normal;
     }
 
     .container-topo .container-navegacao ul li a{
@@ -1028,7 +1026,6 @@ body{
         background-color: #4c0000;
         align-items: center;
         justify-content: flex-start;
-        font-size: 1.3em;
     }
 
     .container-topo .container-navegacao ul li a{
