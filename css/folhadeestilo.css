@@ -912,6 +912,15 @@ body{
         flex-shrink: 0;
     }
 
+    .slide-prev,
+    .slide-next {
+        display: flex;
+        top: 60%;
+        width: 10%;
+        opacity: 0.5;
+        border-radius: 20px;
+    }
+
     .container-carrossel section .conteudo-principal-projetos-projeto:hover{
         animation: none;
     }
@@ -1188,7 +1197,7 @@ body{
 
     .slide-prev,
     .slide-next {
-        display: none;
+        display: flex;
         top: 50%;
         width: 10%;
     }
