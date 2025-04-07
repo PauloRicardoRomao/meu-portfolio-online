@@ -743,7 +743,8 @@ body{
         background-color: #4c0000;
         align-items: center;
         justify-content: flex-start;
-        font-size: 1.5em;
+        font-size: 1.3em;
+        font-weight: normal;
     }
 
     .container-topo .container-navegacao ul li a{
@@ -909,6 +910,15 @@ body{
         position: absolute;
         justify-content: center;
         flex-shrink: 0;
+    }
+
+    .slide-prev,
+    .slide-next {
+        display: flex;
+        top: 60%;
+        width: 10%;
+        opacity: 0.5;
+        border-radius: 20px;
     }
 
     .container-carrossel section .conteudo-principal-projetos-projeto:hover{
@@ -1187,7 +1197,7 @@ body{
 
     .slide-prev,
     .slide-next {
-        display: none;
+        display: flex;
         top: 50%;
         width: 10%;
     }
@@ -1198,13 +1208,6 @@ body{
         position: absolute;
         justify-content: center;
         flex-shrink: 0;
-    }
-
-    @keyframes carrossel-projetos-projeto{
-        0% { transform: translateX(0); }
-        33.33% { transform: translateX(0); }
-        66.66% { transform: translateX(-500px); } /* Desloca um slide */
-        100% { transform: translateX(-1000px); } /* Desloca dois slides */
     }
 
     .container-carrossel section .conteudo-principal-projetos-projeto:hover{
