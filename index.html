@@ -14,9 +14,12 @@
 <body onresize="verificaLargura()">
     <header class="container-topo" id="topo1">
         <div class="barra-superior">
-            <img src="assets/imagens/icoLinkedin.png" alt="LinkedIn">
-            <img src="assets/imagens/icoGithub.png" alt="GitHub">
-            <img src="assets/imagens/icoemail.png" alt="Email">
+            <div class="container-logo-header">
+                <img src="assets/imagens/minhalogo.png" alt="Logo" class="logo-header">
+            </div>
+            <img src="assets/imagens/icoLinkedin.png" alt="LinkedIn" class="btn-social-header" onclick="abreLinkedin()">
+            <img src="assets/imagens/icoGithub.png" alt="GitHub" class="btn-social-header" onclick="abreGitHub()">
+            <img src="assets/imagens/icoemail.png" alt="Email" class="btn-social-header" onclick="abreEmail()">
         </div>
         <button type="button" id="button-menu" class="menu-icone" onclick="abreMenuMobile()">&#9776;</button>
         <nav class="container-navegacao" id="navegacao">
@@ -31,12 +34,14 @@
     <main class="container-principal" id="container-principal">
         <content class="conteudo-principal" id="conteudo-principal">
             <h1 class="conteudo-principal-titulo">Desktop and Web Developer</h1>
-            <!--<a href="https://github.com/PauloRicardoRomao" target="_blank" rel="noopener noreferrer">
-                <button type="button" class="conteudo-esquerda-botao" href="https://github.com/PauloRicardoRomao">Saiba mais</button>
-            </a>-->
-            <button type="button" class="conteudo-principal-botao" href="https://github.com/PauloRicardoRomao">Saiba mais</button>
+            <button type="button" class="conteudo-principal-botao"
+            onclick="saibaMais()">Saiba mais</button>
         </content>
     </main>
+
+    <footer class="container-rodape">
+        <h2 class="texto-rodape">Paulo Romão RMTI © - Todos os Direitos Reservados</h2>
+    </footer>
     <script src="js/app.js"></script>
 </body>
 </html>

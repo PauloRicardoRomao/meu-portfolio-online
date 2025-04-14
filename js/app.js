@@ -36,6 +36,11 @@ function escondeMenuMobile(){
     }
 }
 
+function saibaMais(){
+    /*window.location.href = 'sobre.html';*/
+    window.location.href = 'sobre.html';
+}
+
 function abreGranja(){
     window.open('https://pauloricardoromao.github.io/landing-page-granja/');
 }
@@ -57,7 +62,20 @@ function abreGitHub(){
 }
 
 function abreEmail(){
-    window.open('mailto:pauloromao.dev2020@gmail.com');
+    
+    function enviarEmail(destinatario, assunto, corpo) {
+        const assuntoCodificado = encodeURIComponent(assunto);
+        const corpoCodificado = encodeURIComponent(corpo);
+        const mailtoUrl = `mailto:${destinatario}?subject=${assuntoCodificado}&body=${corpoCodificado}`;
+        window.open(mailtoUrl, '_self');
+    }
+      
+    const emailDestino = 'pauloromao.dev2020@gmail.com';
+    const assuntoEmail = 'Quero desenvolver minha aplicação';
+    const mensagemEmail = 'Olá, gostaria de obter mais informações. Poderiam me ajudar?';
+      
+    enviarEmail(emailDestino, assuntoEmail, mensagemEmail);
+
 }
 
 
