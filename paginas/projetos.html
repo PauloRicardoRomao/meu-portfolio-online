@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio 2025</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/folhadeestilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarala&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarala:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body onload="verificaLargura()">
+    <header class="container-topo" id="topo1">
+        <div class="barra-superior">
+            <div class="container-logo-header">
+                <img src="../assets/imagens/minhalogo.png" alt="Logo" class="logo-header">
+            </div>
+            <img src="../assets/imagens/icoLinkedin.png" alt="LinkedIn" class="btn-social-header" onclick="abreLinkedin()">
+            <img src="../assets/imagens/icoGithub.png" alt="GitHub" class="btn-social-header" onclick="abreGitHub()">
+            <img src="../assets/imagens/icoemail.png" alt="Email" class="btn-social-header" onclick="abreEmail()">
+        </div>
+        <button type="button" id="button-menu" class="menu-icone" onclick="abreMenuMobile()">&#9776;</button>
+        <nav class="container-navegacao" id="navegacao">
+            <ul>
+                <li id="menu-home"><a href="../index.html">HOME</a></li>
+                <li id="menu-projetos"><a href="#">PROJETOS</a></li>
+                <li id="menu-sobre"><a href="../paginas/sobre.html">SOBRE</a></li>
+                <li id="menu-contato"><a href="../paginas/contato.html">CONTATO</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container-principal">
+        <content class="conteudo-principal-projetos" id="carrossel">
+            <div class="container-carrossel">
+                <section id="carrossel-projetos">
+                    <content class="conteudo-principal-projetos-projeto" id="projeto" onclick="abreGranja()">
+                        <img src="../assets/imagens/mobile/logo-granja-mob.jpeg"
+                            srcset="../assets/imagens/mobile/logo-granja-mob.jpeg 480w"
+                            sizes="(max-width: 1024px) 480px"
+                            alt="Logo Antunes Avaré" id="img-fund-antunes">  
+                       <div class="texto-card">
+                            <p>
+                                Landing page desenvolvida no ano de 2025.<br>
+                                © - Todos os direitos reservados.
+                            </p>
+                        </div>
+                        <button class="slide-next">&#9654;</button>
+                    </content>
+                    <content class="conteudo-principal-projetos-projeto" id="projeto" onclick="abreModelaMi()">
+                        <img src="../assets/imagens/Modela Mi logo.png" 
+                            srcset="../assets/imagens/mobile/logo-modelami-mob.png 480w"
+                            sizes="(max-width: 600px) 480px" 
+                            alt="Logo ModelaMi" id="img-modelami">
+                        <div class="texto-card">
+                            <p>
+                                Site catálogo para a Clínica de Estética ModelaMi. Desenvolvida no ano de 2025. <br>
+                                © - Todos os direitos reservados.
+                            </p>
+                        </div>
+                        <button class="slide-prev">&#9664;</button>
+                        <button class="slide-next">&#9654;</button>
+                    </content>
+                    <content class="conteudo-principal-projetos-projeto" id="projeto" onclick="abreFundBra()">
+                        <img src="../assets/imagens/logo.png" 
+                            srcset="../assets/imagens/mobile/logo-fund-bra-mob.png 480w"
+                            sizes="(max-width: 1024px) 480px" 
+                            alt="Logo FundBR" id="img-fund-br">
+                       <div class="texto-card">
+                            <p>
+                                Landing page desenvolvida no ano de 2025.<br>
+                                © - Todos os direitos reservados.
+                            </p>
+                        </div>
+                        <button class="slide-prev">&#9664;</button>
+                    </content>
+                </section>
+            </div>
+        </content>
+    </main>
+    <footer class="container-rodape">
+        <h2 class="texto-rodape">© 2025 - Todos os direitos reservados</h2>
+    </footer>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

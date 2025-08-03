@@ -6,7 +6,8 @@ function verificaLargura(){
         menuMobile.style.display = 'none';
         textMenuMobile.forEach(textMenuMobile => {
             if (window.innerWidth <= 389) {
-                textMenuMobile.style.fontSize = '2.0em';
+                textMenuMobile.style.fontSize = '1.6em';
+                textMenuMobile.style.fontWeight = '600';
             }
         });
     } else if(window.innerWidth > 1024){
@@ -24,7 +25,6 @@ function abreMenuMobile(){
     }else if(menuProp === 'flex'){
         menu.style.display = 'none';
     }
-
 }
 
 function escondeMenuMobile(){
@@ -75,7 +75,6 @@ function abreEmail(){
     const mensagemEmail = 'Olá, gostaria de obter mais informações. Poderiam me ajudar?';
       
     enviarEmail(emailDestino, assuntoEmail, mensagemEmail);
-
 }
 
 
